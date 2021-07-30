@@ -14,16 +14,15 @@ class MyApp extends StatelessWidget {
   final AppRouter _appRouter = new AppRouter();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return BlocProvider<CounterCubit>(
+      create: (context) => CounterCubit(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        onGenerateRoute: _appRouter.onGenerateRoute,
       ),
-      onGenerateRoute: _appRouter.onGenerateRoute,
     );
-  }
-
-  void dispose() {
-    _appRouter.dispose();
   }
 }
