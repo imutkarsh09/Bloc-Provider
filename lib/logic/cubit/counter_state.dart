@@ -5,6 +5,6 @@ class CounterState {
   bool wasIncremented;
   CounterState({
     @required this.counterValue,
-    @required this.wasIncremented,
+    this.wasIncremented,
   });
 }
